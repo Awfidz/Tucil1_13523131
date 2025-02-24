@@ -8,7 +8,7 @@ import java.util.*;
 public class PuzzleFileReader {
 
     public static Puzzle readPuzzleFile(String fileName) throws IOException {
-        Path filePath = Paths.get("input", fileName);
+        Path filePath = Paths.get(fileName);  
         BufferedReader reader = new BufferedReader(new FileReader(filePath.toFile()));
         
         String[] firstLine = reader.readLine().split(" ");

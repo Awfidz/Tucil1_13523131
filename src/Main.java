@@ -44,7 +44,7 @@ public class Main {
     private static void saveResult(PuzzleBoard board, long startTime, long endTime, String fileName) {
         Path filePath = Paths.get("test", fileName);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath.toFile()))) {
-            writer.write("Bentuk Akhir Papan:\n");
+            writer.write("Hasil:\n");
             board.saveToFile(writer);  // Menyimpan papan ke file
 
             double time = (endTime - startTime) * 1E-6;
@@ -53,7 +53,7 @@ public class Main {
 
             System.out.println("Hasil " + fileName + " berhasil disimpan dalam folder test!");
         } catch (IOException e) {
-            System.out.println("Terjadi kesalahan saat menyimpan hasil: " + e.getMessage());
+            System.out.println("Gagal Menyimpan Hasil: " + e.getMessage());
         }
     }
 
@@ -99,7 +99,7 @@ public class Main {
             }
 
         } catch (IOException e) {
-            System.err.println("Gagal membaca file: " + e.getMessage());
+            System.err.println("Gagal membaca file" + e.getMessage());
         }
     }
 }
